@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from '../../redux/operations';
-import { GlobalStyle } from '../GlobalStyle';
-import { ContactForm } from '../contactForm/ContactForm';
-import { Loader } from '../Loader';
-import { Filter } from '../filter/Filter';
-import { ContactList } from '../contactList/ContactList';
+import { fetchContacts } from '../../redux/contacts/operations';
+import { ContactForm } from '../../components/contactForm/ContactForm';
+import { Loader } from '../../components/Loader';
+import { Filter } from '../../components/filter/Filter';
+import { ContactList } from '../../components/contactList/ContactList';
 import {
   selectContacts,
   selectIsLoading,
   selectError,
-} from '../../redux/selectors';
-import { Container, Title, SecondTitle } from './App.styled';
+} from '../../redux/contacts/selectors';
+import { Container, Title, SecondTitle } from './Contacts.styled';
 
-export const App = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
@@ -25,7 +24,6 @@ export const App = () => {
 
   return (
     <Container>
-      <GlobalStyle />
       <Title>Phonebook</Title>
       <ContactForm />
       {isLoading && !error && <Loader />}
@@ -39,3 +37,5 @@ export const App = () => {
     </Container>
   );
 };
+
+export default Contacts;
