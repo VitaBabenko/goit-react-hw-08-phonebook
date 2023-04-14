@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Title = styled.h2`
+  margin-top: 30px;
+  text-align: center;
+  color: #800080;
+`;
+
 export const List = styled.ul`
   list-style: none;
   margin-top: 20px;

@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
+  Title,
   Form,
   FormField,
   Field,
@@ -42,6 +43,7 @@ export const ContactForm = () => {
 
   return (
     <>
+      <Title>Phonebook</Title>
       <Formik
         initialValues={{
           name: '',

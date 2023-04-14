@@ -1,22 +1,27 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectVisibleContacts } from '../../redux/contacts/selectors';
+import { selectContacts } from '../../redux/contacts/selectors';
+// import { Filter } from '../filter/Filter';
 import { ContactListItem } from '../contactListItem/ContactListItem';
-import { List, ListItem } from './ContactList.styled';
+import { Title, List, ListItem } from './ContactList.styled';
 
 export const ContactList = () => {
-  const contacts = useSelector(selectVisibleContacts);
+  const contacts = useSelector(selectContacts);
 
   return (
-    <List>
-      {contacts.map(contact => {
-        return (
-          <ListItem key={contact.id}>
-            <ContactListItem contact={contact} />
-          </ListItem>
-        );
-      })}
-    </List>
+    <>
+      <Title>Contacts</Title>
+      {/* <Filter /> */}
+      <List>
+        {contacts.map(contact => {
+          return (
+            <ListItem key={contact.id}>
+              <ContactListItem contact={contact} />
+            </ListItem>
+          );
+        })}
+      </List>
+    </>
   );
 };
 

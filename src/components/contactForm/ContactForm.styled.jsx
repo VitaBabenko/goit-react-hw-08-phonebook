@@ -5,6 +5,11 @@ import {
   Field as InputField,
 } from 'formik';
 
+export const Title = styled.h1`
+  text-align: center;
+  color: #800080;
+`;
+
 export const Form = styled(FormikForm)`
   border: 2px solid #800080;
   border-radius: 10px;
