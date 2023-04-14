@@ -4,7 +4,7 @@ import Navigation from '../navigation/Navigation';
 import AuthNav from '../authNav/AuthNav';
 import UserMenu from '../userMenu/UserMenu';
 
-const AppBar = () => {
+export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -14,5 +14,3 @@ const AppBar = () => {
     </>
   );
 };
-
-export default AppBar;
