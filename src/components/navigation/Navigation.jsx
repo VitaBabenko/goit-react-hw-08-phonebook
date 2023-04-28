@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
@@ -8,13 +8,13 @@ const Navigation = () => {
 
   return (
     <nav>
-      <Button>
+      <button>
         <NavLink to="/">Home</NavLink>
-      </Button>
+      </button>
       {isLoggedIn && (
-        <Button>
+        <button>
           <NavLink to="/contacts">Contacts</NavLink>
-        </Button>
+        </button>
       )}
     </nav>
   );

@@ -1,4 +1,4 @@
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
 import Navigation from '../navigation/Navigation';
@@ -10,10 +10,10 @@ export const Header = () => {
 
   return (
     <>
-      <AppBar>
+      <div>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </AppBar>
+      </div>
     </>
   );
 };
