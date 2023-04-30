@@ -1,22 +1,23 @@
-// import Button from '@mui/material/Button';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/auth/authSelectors';
+import { HStack } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <nav>
-      <button>
+    <HStack spacing="70px">
+      <Button size="lg" colorScheme="purple" variant="outline">
         <NavLink to="/">Home</NavLink>
-      </button>
+      </Button>
       {isLoggedIn && (
-        <button>
+        <Button size="lg" colorScheme="purple" variant="outline">
           <NavLink to="/contacts">Contacts</NavLink>
-        </button>
+        </Button>
       )}
-    </nav>
+    </HStack>
   );
 };
 

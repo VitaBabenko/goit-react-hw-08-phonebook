@@ -1,16 +1,17 @@
-// import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import { HStack } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 const AuthNav = () => {
   return (
-    <nav>
-      <button>
+    <HStack spacing="40px">
+      <Button size="lg" colorScheme="purple" variant="solid">
         <NavLink to="/register">Register</NavLink>
-      </button>
-      <button>
+      </Button>
+      <Button size="lg" colorScheme="purple" variant="solid">
         <NavLink to="/login">Log In</NavLink>
-      </button>
-    </nav>
+      </Button>
+    </HStack>
   );
 };
 
