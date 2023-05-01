@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GlobalStyle } from './GlobalStyle';
 import { refreshUser } from '../redux/auth/authOperations';
 import { selectIsRefreshing } from '../redux/auth/authSelectors';
 import { Layout } from './Layout';
@@ -36,7 +35,6 @@ const App = () => {
     />
   ) : (
     <>
-      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
