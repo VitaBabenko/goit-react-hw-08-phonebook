@@ -1,18 +1,24 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/contactsOperations';
+import { deleteContact } from '../redux/contacts/contactsOperations';
 import PropTypes from 'prop-types';
-import { Name, Tel, Btn } from './ContactListItem.styled';
+import { Text, Button } from '@chakra-ui/react';
 
 export const ContactListItem = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
 
   return (
     <>
-      <Name>{name} :</Name>
-      <Tel>{number}</Tel>
-      <Btn type="button" onClick={() => dispatch(deleteContact(id))}>
+      <Text fontSize="lg">{name} :</Text>
+      <Text fontSize="lg">{number}</Text>
+      <Button
+        size="md"
+        colorScheme="purple"
+        variant="solid"
+        type="button"
+        onClick={() => dispatch(deleteContact(id))}
+      >
         Delete
-      </Btn>
+      </Button>
     </>
   );
 };

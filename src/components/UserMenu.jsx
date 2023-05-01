@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUser } from '../../redux/auth/authSelectors';
-import { logOut } from '../../redux/auth/authOperations';
-import { HStack } from '@chakra-ui/react';
-import { Button } from '@chakra-ui/react';
+import { selectUser } from '../redux/auth/authSelectors';
+import { logOut } from '../redux/auth/authOperations';
+import { HStack, Button, Text } from '@chakra-ui/react';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -10,7 +9,9 @@ const UserMenu = () => {
 
   return (
     <HStack spacing="70px">
-      <p>Welcome, {user.name}!</p>
+      <Text as="b" fontSize="3xl" color="tomato" textTransform="capitalize">
+        Welcome, {user.name}!
+      </Text>
       <Button
         type="button"
         onClick={() => dispatch(logOut())}

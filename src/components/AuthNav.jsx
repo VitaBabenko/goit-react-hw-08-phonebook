@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { HStack } from '@chakra-ui/react';
-import { Button } from '@chakra-ui/react';
+import { HStack, Button } from '@chakra-ui/react';
 
 const AuthNav = () => {
   return (

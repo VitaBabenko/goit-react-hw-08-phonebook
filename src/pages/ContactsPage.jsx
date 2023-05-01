@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/contacts/contactsOperations';
-import { ContactForm } from '../components/contactForm/ContactForm';
-import { Loader } from '../components/Loader';
-import { Filter } from '../components/filter/Filter';
-import { ContactList } from '../components/contactList/ContactList';
+import { ContactForm } from '../components/ContactForm';
+import { Spinner } from '@chakra-ui/react';
+import { Filter } from '../components/Filter';
+import { ContactList } from '../components/ContactList';
 import {
   selectContacts,
   selectIsLoading,
   selectError,
 } from '../redux/contacts/contactsSelectors';
+import { Heading } from '@chakra-ui/react';
 
 const ContactsPage = () => {
   const [filter, setFilter] = useState('');
@@ -35,10 +36,31 @@ const ContactsPage = () => {
   return (
     <>
       <ContactForm />
-      {isLoading && !error && <Loader />}
+      {isLoading && !error && (
+        <Spinner
+          display="flex"
+          marginLeft="auto"
+          marginRight="auto"
+          marginTop="80px"
+          color="tomato"
+          size="xl"
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+        />
+      )}
       {contacts.length > 0 && (
         <>
-          <h1>Contacts</h1>
+          <Heading
+            as="h2"
+            fontSize="3xl"
+            color="purple"
+            align="center"
+            marginTop="40px"
+            marginBottom="35px"
+          >
+            Contacts
+          </Heading>
           <Filter value={filter} onChange={changeFilter} />
           <ContactList contacts={visibleFilter} />
         </>

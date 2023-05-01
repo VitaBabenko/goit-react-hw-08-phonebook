@@ -5,7 +5,7 @@ import { GlobalStyle } from './GlobalStyle';
 import { refreshUser } from '../redux/auth/authOperations';
 import { selectIsRefreshing } from '../redux/auth/authSelectors';
 import { Layout } from './Layout';
-import { Loader } from './Loader';
+import { Spinner } from '@chakra-ui/react';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 
@@ -23,7 +23,17 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Loader />
+    <Spinner
+      display="flex"
+      marginLeft="auto"
+      marginRight="auto"
+      marginTop="140px"
+      color="tomato"
+      size="xl"
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+    />
   ) : (
     <>
       <GlobalStyle />
