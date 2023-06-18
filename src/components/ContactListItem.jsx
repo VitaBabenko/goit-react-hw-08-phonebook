@@ -3,19 +3,19 @@ import { deleteContact } from '../redux/contacts/contactsOperations';
 import PropTypes from 'prop-types';
 import { Text, Button } from '@chakra-ui/react';
 
-export const ContactListItem = ({ contact: { id, name, number } }) => {
+export const ContactListItem = ({ contact: { _id, name, phone } }) => {
   const dispatch = useDispatch();
 
   return (
     <>
       <Text fontSize="lg">{name} :</Text>
-      <Text fontSize="lg">{number}</Text>
+      <Text fontSize="lg">{phone}</Text>
       <Button
         size="md"
         colorScheme="purple"
         variant="solid"
         type="button"
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={() => dispatch(deleteContact(_id))}
       >
         Delete
       </Button>
@@ -25,8 +25,8 @@ export const ContactListItem = ({ contact: { id, name, number } }) => {
 
 ContactListItem.propTypes = {
   contact: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
   }).isRequired,
 };

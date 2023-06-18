@@ -19,7 +19,7 @@ export const ContactList = ({ contacts }) => {
         {contacts.map(contact => {
           return (
             <ListItem
-              key={contact.id}
+              key={contact._id}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -37,7 +37,7 @@ export const ContactList = ({ contacts }) => {
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      _id: PropTypes.string.isRequired,
     }).isRequired
   ),
 };

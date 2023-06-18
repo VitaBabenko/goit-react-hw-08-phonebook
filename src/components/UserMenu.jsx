@@ -6,6 +6,7 @@ import { HStack, Button, Text } from '@chakra-ui/react';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  console.log(user);
 
   return (
     <HStack spacing="70px">

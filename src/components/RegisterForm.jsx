@@ -1,8 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../redux/auth/authOperations';
+import { selectVerify, selectError } from '../redux/auth/authSelectors';
 import { Box, FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
 
 const RegisterForm = () => {
+  const verify = useSelector(selectVerify);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   const handleSubmit = evt => {
@@ -40,6 +43,10 @@ const RegisterForm = () => {
           Password
           <Input variant="filled" size="md" type="password" name="password" />
         </FormLabel>
+        {error && <h1>User with this email is already registered!</h1>}
+        {verify === false && (
+          <h1>Please, visit your email address and active your account!</h1>
+        )}
         <Button
           display="flex"
           marginLeft="auto"

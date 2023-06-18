@@ -21,7 +21,7 @@ const ContactSchema = Yup.object().shape({
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
       'Name may contain only letters, apostrophe, dash and spaces!'
     ),
-  number: Yup.string()
+  phone: Yup.string()
     .required('Required')
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
@@ -39,6 +39,8 @@ export const ContactForm = () => {
     ).length
       ? toast.error(`${values.name} is already in contacts!`)
       : dispatch(addContact(values));
+
+    console.log(contacts);
 
     actions.resetForm();
   };
@@ -65,7 +67,7 @@ export const ContactForm = () => {
       <Formik
         initialValues={{
           name: '',
-          number: '',
+          phone: '',
         }}
         validationSchema={ContactSchema}
         onSubmit={handleFormSubmit}
@@ -96,7 +98,7 @@ export const ContactForm = () => {
                 </FormControl>
               )}
             </Field>
-            <Field name="number" validate={validateName}>
+            <Field name="phone" validate={validateName}>
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>
                   <FormLabel color="purple">
@@ -104,7 +106,7 @@ export const ContactForm = () => {
                     <Input
                       {...field}
                       variant="filled"
-                      name="number"
+                      name="phone"
                       type="tel"
                     />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
