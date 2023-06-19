@@ -16,7 +16,6 @@ const ContactsPage = () => {
   const [filter, setFilter] = useState('');
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  console.log(contacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 

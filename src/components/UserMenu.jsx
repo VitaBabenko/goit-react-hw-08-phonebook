@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../redux/auth/authSelectors';
-import { logOut } from '../redux/auth/authOperations';
+import { logOutUser } from '../redux/auth/authOperations';
 import { HStack, Button, Text } from '@chakra-ui/react';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  console.log(user);
 
   return (
     <HStack spacing="70px">
@@ -15,7 +14,7 @@ const UserMenu = () => {
       </Text>
       <Button
         type="button"
-        onClick={() => dispatch(logOut())}
+        onClick={() => dispatch(logOutUser())}
         size="lg"
         colorScheme="purple"
         variant="solid"

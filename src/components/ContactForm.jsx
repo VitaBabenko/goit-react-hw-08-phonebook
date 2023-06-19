@@ -40,8 +40,6 @@ export const ContactForm = () => {
       ? toast.error(`${values.name} is already in contacts!`)
       : dispatch(addContact(values));
 
-    console.log(contacts);
-
     actions.resetForm();
   };
 
@@ -100,7 +98,9 @@ export const ContactForm = () => {
             </Field>
             <Field name="phone" validate={validateName}>
               {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                <FormControl
+                  isInvalid={form.errors.phone && form.touched.phone}
+                >
                   <FormLabel color="purple">
                     Number
                     <Input
@@ -109,7 +109,7 @@ export const ContactForm = () => {
                       name="phone"
                       type="tel"
                     />
-                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                    <FormErrorMessage>{form.errors.phone}</FormErrorMessage>
                   </FormLabel>
                 </FormControl>
               )}

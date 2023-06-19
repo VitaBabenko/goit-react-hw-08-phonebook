@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FormLabel, Input } from '@chakra-ui/react';
 
 export const Filter = ({ value, onChange }) => {
@@ -23,4 +24,9 @@ export const Filter = ({ value, onChange }) => {
       />
     </FormLabel>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
 };
