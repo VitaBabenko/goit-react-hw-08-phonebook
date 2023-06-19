@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "phonebook-react-redux-authorization",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://VitaBabenko.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://VitaBabenko.github.io/phonebook-react-redux-authorization/",
   "dependencies": {
     "@chakra-ui/react": "^2.6.0",
     "@emotion/react": "^11.10.8",
