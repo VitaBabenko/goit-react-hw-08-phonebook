@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/contacts/contactsOperations';
 import { ContactForm } from '../components/ContactForm';
-import { Spinner } from '@chakra-ui/react';
 import { Filter } from '../components/Filter';
 import { ContactList } from '../components/ContactList';
 import {
@@ -10,7 +9,7 @@ import {
   selectIsLoading,
   selectError,
 } from '../redux/contacts/contactsSelectors';
-import { Heading } from '@chakra-ui/react';
+import { Spinner, Heading } from '@chakra-ui/react';
 
 const ContactsPage = () => {
   const [filter, setFilter] = useState('');
